@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import fr.bnpp.tictactoe.ui.TicTacToeScreen
 import fr.bnpp.tictactoe.ui.theme.TicTacToeAppTheme
 
-class MainActivity : ComponentActivity() {
+class TicTacToeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
