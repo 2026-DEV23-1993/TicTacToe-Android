@@ -17,9 +17,9 @@ A clean, test-driven implementation of the classic Tic Tac Toe game, built with 
 
 ## 📸 Screenshots
 
-|         Gameplay         |      Winning State      |           Draw           |
-|:------------------------:|:-----------------------:|:------------------------:|
-| [](screenshots/game.png) | [](screenshots/win.png) | [](screenshots/draw.png) |
+|         Gameplay          |      Winning State       |           Draw            |
+|:-------------------------:|:------------------------:|:-------------------------:|
+| ![](screenshots/game.png) | ![](screenshots/win.png) | ![](screenshots/draw.png) |
 
 ## ✨ Features
 * Classic 3×3 Tic Tac Toe gameplay
@@ -51,8 +51,6 @@ The game follows standard Tic Tac Toe rules:
 * Win detection (rows, columns, diagonals)
 * Draw detection
 * No moves allowed after game completion
-
-
 
 
 ## 🧱 Architecture Overview
