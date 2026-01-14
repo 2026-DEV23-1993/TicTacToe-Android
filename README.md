@@ -1,7 +1,7 @@
+<p align="center"><img src="assets/app_icon.png" alt="app icon" width="200"></p>
+
 # Tic Tac Toe – Jetpack Compose
 A clean, test-driven implementation of the classic Tic Tac Toe game, built with Kotlin and Jetpack Compose, following Clean Architecture principles.
-
-
 
 ## 🚀 Getting Started
 
