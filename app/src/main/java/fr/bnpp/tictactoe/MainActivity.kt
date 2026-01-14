@@ -9,14 +9,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import fr.bnpp.tictactoe.ui.TicTacToeScreen
+import fr.bnpp.tictactoe.ui.theme.TicTacToeAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                TicTacToeScreen(modifier = Modifier.padding(innerPadding))
+            TicTacToeAppTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    TicTacToeScreen(modifier = Modifier.padding(innerPadding))
+                }
             }
         }
     }
