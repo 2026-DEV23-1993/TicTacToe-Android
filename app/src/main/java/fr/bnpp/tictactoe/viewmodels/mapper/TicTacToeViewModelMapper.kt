@@ -1,5 +1,6 @@
 package fr.bnpp.tictactoe.viewmodels.mapper
 
+import fr.bnpp.tictactoe.R
 import fr.bnpp.tictactoe.domain.models.TicTacToeGameState
 import fr.bnpp.tictactoe.domain.models.TicTacToeSymbol
 import fr.bnpp.tictactoe.viewmodels.models.Cell
@@ -26,7 +27,7 @@ class TicTacToeViewModelMapper {
         return when (currentGameState) {
             TicTacToeGameState.Win -> {
                 TicTacToeUiState(
-                    title = "Winner: ${currentPlayer.label}",
+                    titleResId = R.string.game_state_winner_title,
                     board = updatedBoard.map { it.copy(isPlayable = false) },
                     currentPlayer = currentPlayer
                 )
@@ -34,7 +35,7 @@ class TicTacToeViewModelMapper {
 
             TicTacToeGameState.Draw -> {
                 TicTacToeUiState(
-                    title = "Draw",
+                    titleResId = R.string.game_state_draw_title,
                     board = updatedBoard,
                     currentPlayer = currentPlayer
                 )
@@ -43,7 +44,7 @@ class TicTacToeViewModelMapper {
             TicTacToeGameState.InProgress -> {
                 val nextPlayer = switchPlayer(currentPlayer)
                 TicTacToeUiState(
-                    title = "Turn: ${nextPlayer.label}",
+                    titleResId = R.string.game_state_turn_title,
                     board = updatedBoard,
                     currentPlayer = nextPlayer
                 )

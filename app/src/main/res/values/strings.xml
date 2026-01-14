@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
+    <string name="game_state_winner_title">Winner: %s</string>
+    <string name="game_state_draw_title">Draw</string>
+    <string name="game_state_turn_title">Turn: %s</string>
+    <string name="restart_button_title">Turn: %s</string>
 </resources>

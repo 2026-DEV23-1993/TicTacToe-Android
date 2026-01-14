@@ -1,5 +1,6 @@
 package fr.bnpp.tictactoe.viewmodels
 
+import fr.bnpp.tictactoe.R
 import fr.bnpp.tictactoe.viewmodels.models.Player
 import fr.bnpp.tictactoe.viewmodels.models.TicTacToeUiEvent
 import fr.bnpp.tictactoe.viewmodels.models.TicTacToeUiState
@@ -45,7 +46,7 @@ class TicTacToeViewModelTest {
 
         val finalState = viewModel.state.value
         assertTrue(finalState.board.all { !it.isPlayable })
-        assertEquals("Winner: X",finalState.title)
+        assertEquals(R.string.game_state_winner_title, finalState.titleResId)
     }
 
     @Test

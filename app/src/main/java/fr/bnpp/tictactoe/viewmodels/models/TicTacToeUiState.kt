@@ -1,16 +1,18 @@
 package fr.bnpp.tictactoe.viewmodels.models
 
+import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Color
+import fr.bnpp.tictactoe.R
 import fr.bnpp.tictactoe.viewmodels.utils.ViewState
 
 data class TicTacToeUiState(
-    val title: String,
+    @StringRes val titleResId: Int,
     val board: List<Cell>,
     val currentPlayer: Player
 ) : ViewState {
     companion object {
         fun init(): TicTacToeUiState = TicTacToeUiState(
-            title = "Turn: ${Player.X.label}",
+            titleResId = R.string.game_state_turn_title,
             board = List(9) { Cell() },
             currentPlayer = Player.X
         )

@@ -1,5 +1,6 @@
 package fr.bnpp.tictactoe.viewmodels.mapper
 
+import fr.bnpp.tictactoe.R
 import fr.bnpp.tictactoe.domain.models.TicTacToeGameState
 import fr.bnpp.tictactoe.domain.models.TicTacToeSymbol
 import fr.bnpp.tictactoe.viewmodels.models.Cell
@@ -31,15 +32,17 @@ class TicTacToeViewModelMapperTest {
         assertEquals(Player.X, newState.board[position].player)
         assertFalse(newState.board[position].isPlayable)
         assertEquals(Player.O, newState.currentPlayer)
-        assertEquals("Turn: O", newState.title)
+        assertEquals(R.string.game_state_turn_title, newState.titleResId)
+
     }
 
     @Test
     fun `updateBoard should only modify the played cell`() {
         val initialBoard = List(9) { index -> if (index == 0) Cell(player = Player.O) else Cell() }
         val initialState = TicTacToeUiState(
-            board = initialBoard, currentPlayer = Player.X,
-            title = "Turn: X"
+            board = initialBoard,
+            currentPlayer = Player.X,
+            titleResId = R.string.game_state_turn_title
         )
         val positionToPlay = 4
 
@@ -63,7 +66,7 @@ class TicTacToeViewModelMapperTest {
 
         val newState = mapper.handleGameState(board, currentPlayer, gameState)
 
-        assertEquals("Winner: X", newState.title)
+        assertEquals(R.string.game_state_winner_title, newState.titleResId)
         assertTrue(newState.board.all { !it.isPlayable })
     }
 
@@ -75,7 +78,7 @@ class TicTacToeViewModelMapperTest {
 
         val newState = mapper.handleGameState(board, currentPlayer, gameState)
 
-        assertEquals("Winner: O", newState.title)
+        assertEquals(R.string.game_state_winner_title, newState.titleResId)
         assertTrue(newState.board.all { !it.isPlayable })
     }
 
@@ -87,7 +90,7 @@ class TicTacToeViewModelMapperTest {
 
         val newState = mapper.handleGameState(board, currentPlayer, gameState)
 
-        assertEquals("Draw", newState.title)
+        assertEquals(R.string.game_state_draw_title, newState.titleResId)
         assertEquals(board, newState.board)
     }
 
@@ -99,7 +102,7 @@ class TicTacToeViewModelMapperTest {
 
         val newState = mapper.handleGameState(board, currentPlayer, gameState)
 
-        assertEquals("Turn: O", newState.title)
+        assertEquals(R.string.game_state_turn_title, newState.titleResId)
         assertEquals(Player.O, newState.currentPlayer)
     }
 
@@ -111,7 +114,7 @@ class TicTacToeViewModelMapperTest {
 
         val newState = mapper.handleGameState(board, currentPlayer, gameState)
 
-        assertEquals("Turn: X", newState.title)
+        assertEquals(R.string.game_state_turn_title, newState.titleResId)
         assertEquals(Player.X, newState.currentPlayer)
     }
 
