@@ -5,10 +5,10 @@ import fr.bnpp.tictactoe.domain.models.TicTacToeSymbol
 
 class GetCurrentGameState {
 
-    operator fun invoke(currentTicTacToeSymbolBoard: List<TicTacToeSymbol>, currentTicTacToeSymbol: TicTacToeSymbol): TicTacToeGameState {
+    operator fun invoke(currentSymbolBoard: List<TicTacToeSymbol>, currentSymbol: TicTacToeSymbol): TicTacToeGameState {
         return when {
-            isWinner(currentTicTacToeSymbolBoard, currentTicTacToeSymbol) -> TicTacToeGameState.Win
-            isDraw(currentTicTacToeSymbolBoard) -> TicTacToeGameState.Draw
+            isWinner(currentSymbolBoard, currentSymbol) -> TicTacToeGameState.Win
+            isDraw(currentSymbolBoard) -> TicTacToeGameState.Draw
             else -> TicTacToeGameState.InProgress
         }
     }
