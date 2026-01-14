@@ -20,8 +20,8 @@ data class TicTacToeUiState(
 }
 
 sealed class Player(val label: String, val color: Color) {
-    object X : Player(label = "X", color = Color.Red)
-    object O : Player(label = "O", color = Color.Blue)
+    object X : Player(label = "X", color = Color.Blue)
+    object O : Player(label = "O", color = Color.Red)
 }
 
 data class Cell(

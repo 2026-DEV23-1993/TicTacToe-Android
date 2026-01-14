@@ -20,7 +20,7 @@ class TicTacToeViewModel(
 
     private fun play(position: Int) {
         val currentState = state.value
-        val updatedBoard = mapper.updateBoard(currentState, position)
+        val updatedBoard = mapper.updateBoard(currentState = currentState, position = position)
         val currentGameState = getCurrentGameState(
             currentSymbolBoard = mapper.mapToCurrentSymbolBoard(updatedBoard),
             currentSymbol = mapper.mapToCurrentSymbol(currentState.currentPlayer)
