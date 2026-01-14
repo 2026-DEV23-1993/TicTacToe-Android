@@ -9,13 +9,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
 import fr.bnpp.tictactoe.ui.theme.Dimens
 import fr.bnpp.tictactoe.viewmodels.models.Cell
 import fr.bnpp.tictactoe.viewmodels.models.TicTacToeUiEvent
@@ -30,24 +27,16 @@ fun TicTacToeBoard(
         columns = GridCells.Fixed(3)
     ) {
         items(board.size) { index ->
-            val square = board[index]
             Box(
                 modifier = Modifier
                     .size(Dimens.boardCellSize)
                     .background(Color.LightGray)
                     .border(BorderStroke(Dimens.borderStroke, Color.Black))
-                    .clickable(enabled = square.isPlayable) {
+                    .clickable(enabled = board[index].isPlayable) {
                         onPlay(TicTacToeUiEvent.Play(index))
                     }, contentAlignment = Alignment.Center
             ) {
-                square.player?.let { player ->
-                    Text(
-                        text = player.label,
-                        style = MaterialTheme.typography.titleLarge,
-                        textAlign = TextAlign.Center,
-                        color = player.color
-                    )
-                }
+                TicTacToeCell(player = board[index].player)
             }
         }
     }

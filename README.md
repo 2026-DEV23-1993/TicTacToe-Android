@@ -62,7 +62,7 @@ The project follows Clean Architecture, separating responsibilities into clear l
         |  Jetpack Compose    |
         +---------------------+
                    |
-              UiEvents
+               UiEvents
                    |
                    v
         +---------------------+
